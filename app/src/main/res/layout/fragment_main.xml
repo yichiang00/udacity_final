@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <!--Copy UI code from this post-->
+    <!--Connect with Firebase Auth - https://firebase.google.com/docs/auth/android/custom-auth-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <!--<include layout="@layout/toolbar_default"/>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profile_input_contactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="-10dp"
+            app:errorEnabled="true"
+            >
+            <EditText
+                android:id="@+id/profile_et_contactName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:hint="Contact Name"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profile_input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="-10dp"
+            app:errorEnabled="true"
+            >
+            <EditText
+                android:id="@+id/profile_et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:imeOptions="actionNext"
+                android:hint="Your phone"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/profile_cb_terms"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="12sp"-->
+            <!--android:text="This is the terms and conditions you must accept or you can not continue, easy as peace"-->
+            <!--/>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profile_input_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:tag="customer-name"
+            app:errorEnabled="true"
+            >
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profile_input_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:tag="customer-name"
+            app:errorEnabled="true"
+            >
+
+            <EditText
+                android:id="@+id/profile_et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:hint="Your description"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/profile_btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:minHeight="35dp"
+            android:text="Submit"
+            />
+
+    </LinearLayout>
+</ScrollView>
